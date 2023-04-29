@@ -1,5 +1,3 @@
-
-
 import mongoose from "mongoose";
 const { Schema } = mongoose;
 
@@ -35,7 +33,7 @@ const GigSchema = new Schema(
     },
     cover: {
       type: String,
-      required: false,
+      required: true,
     },
     images: {
       type: [String],
@@ -47,19 +45,19 @@ const GigSchema = new Schema(
     },
     shortTitle: {
       type: String,
-      required: false,
+      required: true,
     },
     shortDesc: {
       type: String,
-      required: false,
+      required: true,
     },
     deliveryTime: {
       type: Number,
-      required: false,
+      required: true,
     },
     revisionNumber: {
       type: Number,
-      required: false,
+      required: true,
     },
     features: {
       type: [String],

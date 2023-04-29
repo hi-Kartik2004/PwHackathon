@@ -1,7 +1,12 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+<<<<<<< HEAD
 import newRequest
 import "./Navbar.scss";
+=======
+import newRequest from "../../../utils/newRequest";
+import "./Home.scss";
+>>>>>>> d015ecf62602e9862c3f8d3b0d6504e55b33e155
 
 function Navbar() {
   const [active, setActive] = useState(false);
