@@ -3,10 +3,10 @@ const { Schema } = mongoose;
 
 const GigSchema = new Schema(
   {
-    userId: {
-      type: String,
-      required: true,
-    },
+    // userId: {
+    //   type: String,
+    //   required: true,
+    // },
     title: {
       type: String,
       required: true,
@@ -14,14 +14,6 @@ const GigSchema = new Schema(
     desc: {
       type: String,
       required: true,
-    },
-    totalStars: {
-      type: Number,
-      default: 0,
-    },
-    starNumber: {
-      type: Number,
-      default: 0,
     },
     cat: {
       type: String,
@@ -31,17 +23,13 @@ const GigSchema = new Schema(
       type: Number,
       required: true,
     },
-    cover: {
-      type: String,
-      required: true,
-    },
+    // cover: {
+    //   type: String,
+    //   required: true,
+    // },
     images: {
       type: [String],
       required: false,
-    },
-    userId: {
-      type: String,
-      required: true,
     },
     shortTitle: {
       type: String,
@@ -62,11 +50,8 @@ const GigSchema = new Schema(
     features: {
       type: [String],
       required: false,
-    },
-    sales: {
-      type: Number,
-      default: 0,
-    },
+    }
+ 
   },
   {
     timestamps: true,

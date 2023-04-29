@@ -1,7 +1,7 @@
 import  { useState } from "react";
-import upload from "../../../utils/upload";
+import upload from "../../utils/upload";
 import "./Register.scss";
-import newRequest from "../../../utils/newRequest";
+import newRequest from "../../utils/newRequest";
 import { useNavigate } from "react-router-dom";
 
 function Register() {
