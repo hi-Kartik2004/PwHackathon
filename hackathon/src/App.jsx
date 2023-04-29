@@ -3,6 +3,7 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import React from "react";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
+import CatogCard from "./components/CatogCard/Catogcard";
 
 function App() {
   const Layout = () => {
@@ -10,6 +11,8 @@ function App() {
       <div className="app">
         <Navbar />
         <Footer />
+        <CatogCard/>
+
       </div>
     );
   };
