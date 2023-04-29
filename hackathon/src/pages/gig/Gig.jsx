@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import "./Gig.scss";
 // import { Slider } from "infinite-react-carousel/lib";
 
@@ -7,7 +7,7 @@ function Gig() {
     <div className="gig">
       <div className="container">
         <div className="left">
-          <span className="breadcrumbs">Liverr  Graphics & Design </span>
+          <span className="breadcrumbs">GigBride  Graphics & Design </span>
           <h1>I will create ai generated art for you</h1>
           <div className="user">
             <img
