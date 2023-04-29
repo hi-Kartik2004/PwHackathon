@@ -1,7 +1,7 @@
 import React from "react";
 import "./T_companies.scss";
 
-const T_companies = () => {
+const T_Companies = () => {
   return (
     <div className="trustedBy">
       <div className="container">
@@ -16,4 +16,4 @@ const T_companies = () => {
   );
 };
 
-export default T_companies;
+export default T_Companies;
