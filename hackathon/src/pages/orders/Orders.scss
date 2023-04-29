@@ -5,7 +5,7 @@
   
     .container {
       width: 1400px;
-      padding: 50px 0px;
+      padding: 50px 20px;
   
       .title {
         display: flex;
@@ -51,5 +51,20 @@
           }
         }
       }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    *{font-size: 14px;}
+  }
+
+  @media screen and (max-width: 400px) {
+    *{
+      font-size: 11px;
+    }
+
+    .container {
+      width: 1400px;
+      padding: 40px 10px;
     }
   }
