@@ -5,6 +5,7 @@ import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import CatogCard from "./components/CatogCard/Catogcard";
 import Featured from "./components/feature/Feature";
+import Card from "./components/g_card/Card";
 
 function App() {
   const Layout = () => {
@@ -13,7 +14,7 @@ function App() {
         <Navbar />
         <Featured/>
         <CatogCard/>
-        
+        <Card/>
         <Footer />
 
       </div>
