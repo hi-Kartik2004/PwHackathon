@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import newRequest from "../../../utils/newRequest";
+import newRequest from "../../utils/newRequest";
 import "./Home.scss";
 
 function Navbar() {
