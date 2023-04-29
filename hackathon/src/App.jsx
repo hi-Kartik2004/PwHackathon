@@ -1,6 +1,5 @@
 import "./app.scss";
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import CatogCard from "./components/CatogCard/Catogcard";
