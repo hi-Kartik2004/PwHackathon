@@ -4,7 +4,7 @@ import {
   deleteGig,
   getGig,
   getGigs
-} from "../gigControl.js";
+} from "../contollers/gig.controller.js"
 import { verifyToken } from "../middleware/jwt.js";
 
 const router = express.Router();

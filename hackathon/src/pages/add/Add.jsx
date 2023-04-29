@@ -1,16 +1,15 @@
-import  { useReducer } from "react";
+import  { useReducer, useState } from "react";
 import "./Add.scss";
 import { gigReducer, INITIAL_STATE } from "../../reducers/gigReducer";
-// import upload from "../../utils/upload";
-import { useMutation } from "@tanstack/react-query";
+import upload from "../../../utils/upload";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import newRequest from "../../../utils/newRequest";
 import { useNavigate } from "react-router-dom";
-// import { useQueryClient } from "@tanstack/react-query";
 
 const Add = () => {
-  // const [singleFile, setSingleFile] = useState(undefined);
-  // const [files, setFiles] = useState([]);
-  // const [uploading, setUploading] = useState(false);
+  const [singleFile, setSingleFile] = useState(undefined);
+  const [files, setFiles] = useState([]);
+  const [uploading, setUploading] = useState(false);
 
   const [state, dispatch] = useReducer(gigReducer, INITIAL_STATE);
 
@@ -29,34 +28,34 @@ const Add = () => {
     e.target[0].value = "";
   };
 
-  // const handleUpload = async () => {
-  //   setUploading(true);
-  //   try {
-  //     // const cover = await upload(singleFile);
+  const handleUpload = async () => {
+    setUploading(true);
+    try {
+      const cover = await upload(singleFile);
 
-  //     const images = await Promise.all(
-  //       [...files].map(async (file) => {
-  //         // const url = await upload(file);
-  //         // return url;
-  //       })
-  //     );
-  //     setUploading(false);
-  //     dispatch({ type: "ADD_IMAGES", payload: { cover, images } });
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
+      const images = await Promise.all(
+        [...files].map(async (file) => {
+          const url = await upload(file);
+          return url;
+        })
+      );
+      setUploading(false);
+      dispatch({ type: "ADD_IMAGES", payload: { cover, images } });
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const navigate = useNavigate();
 
-  // const queryClient = useQueryClient();
+  const queryClient = useQueryClient();
 
   const mutation = useMutation({
     mutationFn: (gig) => {
       return newRequest.post("/gigs", gig);
     },
     onSuccess: () => {
-      // queryClient.invalidateQueries(["myGigs"]);
+      queryClient.invalidateQueries(["myGigs"]);
     },
   });
 
@@ -91,17 +90,17 @@ const Add = () => {
                 <label htmlFor="">Cover Image</label>
                 <input
                   type="file"
-                  
+                  onChange={(e) => setSingleFile(e.target.files[0])}
                 />
                 <label htmlFor="">Upload Images</label>
                 <input
                   type="file"
                   multiple
-                  
+                  onChange={(e) => setFiles(e.target.files)}
                 />
               </div>
-              <button >
-                
+              <button onClick={handleUpload}>
+                {uploading ? "uploading" : "Upload"}
               </button>
             </div>
             <label htmlFor="">Description</label>
