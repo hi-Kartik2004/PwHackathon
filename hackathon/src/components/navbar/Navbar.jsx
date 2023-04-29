@@ -55,6 +55,7 @@ function Navbar() {
                     <Link className="link" to="/mygigs">
                       Gigs
                     </Link>
+                    
                     <Link className="link" to="/add">
                       Add New Gig
                     </Link>

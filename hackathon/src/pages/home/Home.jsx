@@ -12,11 +12,15 @@ function Home() {
     <div className="home">
       <Feature />
       <T_Companies/>
+
+
   {/* {<Slide slidesToShow={5} arrowsScroll={5}>
     {cards.map((card) => (
       <CatCard key={card.id} card={card} />
     ))}
   </Slide>} */}
+
+  
       <div className="features">
         <div className="container">
           <div className="item">
