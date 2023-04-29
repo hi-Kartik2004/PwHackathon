@@ -2,6 +2,7 @@ import "./Feature.scss";
 
 function Featured() {
   return (
+    <center>
     <div className="featured">
       <div className="container">
         <div className="left">
@@ -28,6 +29,7 @@ function Featured() {
         </div>
       </div>
     </div>
+    </center>
   );
 }
 

@@ -41,28 +41,34 @@
     }
 
     .container {
+      padding: 0px 25px;
       width: 1400px;
       display: flex;
       align-items: center;
       gap: 200px;
+
       .item {
         display: flex;
         flex-direction: column;
         gap: 15px;
+
         &:first-child {
           flex: 2;
         }
+
         &:last-child {
           flex: 3;
         }
 
-        img{
+        img {
           width: 100%;
         }
+
         h1 {
           font-weight: 500;
           margin-bottom: 10px;
         }
+
         .title {
           display: flex;
           align-items: center;
@@ -70,11 +76,13 @@
           font-weight: 500;
           font-size: 18px;
           color: #666;
+
           img {
             width: 24px;
             height: 24px;
           }
         }
+
         p {
           font-size: 18px;
           font-weight: 300;
@@ -83,12 +91,49 @@
           letter-spacing: 1px;
         }
 
-        video{
+        video {
           width: 720px;
         }
       }
     }
+    @media screen and (max-width: 1368px) {
+      .container {
+        flex-direction: column;
+        gap: 75px;
+      }
+    }
+    @media screen and (max-width: 968px) {
+      .container {
+        width: 100%;
+        .item {
+          video {
+            width: 500px;
+          }
+        }
+      }
+      @media screen and (max-width: 968px) {
+        .container {
+          width: 100%;
 
+          .item {
+            video {
+              width: 30rem;
+            }
+          }
+        }
+      }
+      @media screen and (max-width: 482px) {
+        .container {
+          width: 100%;
+          
+          .item {
+            video {
+              width: 22rem;
+            }
+          }
+        }
+      }
+    }
     //   &.reverse {
     //     background-color: #0d084d;
     //     color: white;
@@ -97,7 +142,9 @@
     //     }
     //   }
   }
-
+.explore .container h1{
+  text-align: center;
+}
   .explore {
     display: flex;
     justify-content: center;
@@ -154,3 +201,11 @@
     }
   }
 }
+
+@media screen and (max-width : 468px) {
+  .home .explore .container .items
+            {
+                display: flex;
+                justify-content: center;
+            }
+            }

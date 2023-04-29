@@ -17,4 +17,9 @@
         object-fit: contain;
       }
     }
+        @media screen and (max-width : 668px) {
+          .container {
+            flex-wrap: wrap;
+          }
+        }
   }

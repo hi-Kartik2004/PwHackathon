@@ -155,7 +155,7 @@ function Home() {
         <div className="container">
           <div className="item">
             <h1>
-              fiverr <i>business</i>
+              GigBridge <i>business</i>
             </h1>
             <h1>
               A business solution designed for <i>teams</i>
