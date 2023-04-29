@@ -4,14 +4,17 @@ import React from "react";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import CatogCard from "./components/CatogCard/Catogcard";
+import Featured from "./components/feature/Feature";
 
 function App() {
   const Layout = () => {
     return (
       <div className="app">
         <Navbar />
-        <Footer />
+        <Featured/>
         <CatogCard/>
+        
+        <Footer />
 
       </div>
     );
