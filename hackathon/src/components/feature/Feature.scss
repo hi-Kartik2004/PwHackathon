@@ -17,11 +17,15 @@
   
         h1 {
           font-size: 50px;
-  
-          span {
-            font-style: italic;
-            font-weight: 300;
-          }
+        }
+
+        span {
+          font-style: italic;
+          font-weight: 300;
+        }
+
+        span{
+          cursor: pointer;
         }
   
         .search {
@@ -56,7 +60,7 @@
             width: 120px;
             height: 50px;
             border: none;
-            background-color: #001641;
+            background-color: #008e5a;
             color: white;
             align-self: flex-end;
             cursor: pointer;
