@@ -6,7 +6,7 @@ const upload = async (file) => {
   data.append("upload_preset", "GigBridge");
 
   try {
-    const res = await axios.post("cloudinary://727299443939275:HCHHj3d7lKyzXcXjfgNfc7r8kGg@dfrlw9irm", data);
+    const res = await axios.post("https://api.cloudinary.com/v1_1/dfrlw9irm", data);
 
     const { url } = res.data;
     return url;
