@@ -1,6 +1,0 @@
-1. npm i sass
-2. npx eslint --init
-3. npm i react-router-dom
-4 . npm i @tanstack/react-query
-
-
