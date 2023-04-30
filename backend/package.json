@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@stripe/stripe-js": "^1.52.1",
     "axios": "^1.4.0",
     "bcrypt": "^5.1.0",
     "cookie-parser": "^1.4.6",
@@ -20,6 +21,7 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.1.0",
     "nodemon": "^2.0.22",
+    "process": "^0.11.10",
     "stripe": "^12.3.0"
   }
 }
