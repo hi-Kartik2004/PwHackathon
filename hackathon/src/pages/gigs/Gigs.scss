@@ -5,7 +5,7 @@
   
     .container {
       width: 1400px;
-      padding: 30px 0px;
+      padding: 30px 25px;
       display: flex;
       flex-direction: column;
       gap: 15px;
@@ -108,4 +108,7 @@
         flex-wrap: wrap;
       }
     }
+  }
+  @media screen and (max-width: 2240px) {
+    
   }

@@ -17,11 +17,11 @@ function Gig() {
             />
             <span>Anna Bell</span>
             <div className="stars">
-              <img src="/img/star.png" alt="" />
-              <img src="/img/star.png" alt="" />
-              <img src="/img/star.png" alt="" />
-              <img src="/img/star.png" alt="" />
-              <img src="/img/star.png" alt="" />
+              <img src="/../hackathon/public/img/star.png" alt="" />
+              <img src="/../hackathon/public/img/star.png" alt="" />
+              <img src="/../hackathon/public/img/star.png" alt="" />
+              <img src="/../hackathon/public/img/star.png" alt="" />
+              <img src="/../hackathon/public/img/star.png" alt="" />
               <span>5</span>
             </div>
           </div>

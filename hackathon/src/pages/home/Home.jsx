@@ -3,9 +3,9 @@ import "./Home.scss";
 import Feature from "../../components/feature/Feature";
 import T_Companies from "../../components/t_companies/T_Companies" 
 // import Slide from "../../components/slide/Slide";
-import CatCard from "../../components/catogCard/Catogcard";
-import ProjectCard from "../../components/projectCard/ProjectCard";
-import { cards, projects } from "../../data";
+// import CatCard from "../../components/catogCard/Catogcard";
+// import ProjectCard from "../../components/projectCard/ProjectCard";
+// import { cards, projects } from "../../data";
 
 function Home() {
   return (
