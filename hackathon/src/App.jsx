@@ -13,6 +13,9 @@ import Orders from "./pages/orders/Orders";
 import Messages from "./pages/messages/Messages";
 import Message from "./pages/message/Message";
 import MyGigs from "./pages/myGigs/MyGigs";
+import Pay from "./pages/pay/Pay";
+import Success from "./pages/success/Success";
+import Feature from "./components/feature/Feature";
 import {
   QueryClient,
   QueryClientProvider,
@@ -89,7 +92,6 @@ function App() {
         // },
       ],
     },
-<<<<<<< HEAD
     {
       path: "/register",
       element: <Register />,
@@ -106,8 +108,6 @@ function App() {
       path: "/success",
       element: <Success />,
     },
-=======
->>>>>>> d015ecf62602e9862c3f8d3b0d6504e55b33e155
   ]);
 
   return <RouterProvider router={router} />;

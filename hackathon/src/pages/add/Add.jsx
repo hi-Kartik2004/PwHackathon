@@ -5,6 +5,7 @@ import upload from "../../utils/upload";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import newRequest from "../../utils/newRequest";
 import { useNavigate } from "react-router-dom";
+import cors from "cors"
 
 const Add = () => {
   const [singleFile, setSingleFile] = useState(undefined);
@@ -59,9 +60,17 @@ const Add = () => {
     },
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    mutation.mutate(state);
+  const handleSubmit = async() => {
+    console.log(state.title)
+    // e.preventDefault();
+    // mutation.mutate(state);
+    const response = await fetch("http://localhost:3000/api/gigs" , {
+    method : 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body : JSON.stringify({title :state.title})
+  });
     // navigate("/mygigs")
   };
 

@@ -1,129 +1,196 @@
-import { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import newRequest from "../../utils/newRequest";
+import React from "react";
 import "./Home.scss";
->>>>>>> d015ecf62602e9862c3f8d3b0d6504e55b33e155
+import Feature from "../../components/feature/Feature";
+import T_Companies from "../../components/t_companies/T_Companies" 
+// import Slide from "../../components/slide/Slide";
+import CatCard from "../../components/catogCard/Catogcard";
+import ProjectCard from "../../components/projectCard/ProjectCard";
+import { cards, projects } from "../../data";
 
-function Navbar() {
-  const [active, setActive] = useState(false);
-  const [open, setOpen] = useState(false);
-
-  const { pathname } = useLocation();
-
-  const isActive = () => {
-    window.scrollY > 0 ? setActive(true) : setActive(false);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", isActive);
-    return () => {
-      window.removeEventListener("scroll", isActive);
-    };
-  }, []);
-
-  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-
-  const navigate = useNavigate();
-
-  const handleLogout = async () => {
-    try {
-      await newRequest.post("/auth/logout");
-      localStorage.setItem("currentUser", null);
-      navigate("/");
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
+function Home() {
   return (
-    <div className={active || pathname !== "/" ? "navbar active" : "navbar"}>
-      <div className="container">
-        <div className="logo">
-          <Link className="link" to="/">
-            <span className="text">fiverr</span>
-          </Link>
-          <span className="dot">.</span>
-        </div>
-        <div className="links">
-          <span>Fiverr Business</span>
-          <span>Explore</span>
-          <span>English</span>
-          {!currentUser?.isSeller && <span>Become a Seller</span>}
-          {currentUser ? (
-            <div className="user" onClick={() => setOpen(!open)}>
-              <img src={currentUser.img || "/img/noavatar.jpg"} alt="" />
-              <span>{currentUser?.username}</span>
-              {open && (
-                <div className="options">
-                  {currentUser.isSeller && (
-                    <>
-                      <Link className="link" to="/mygigs">
-                        Gigs
-                      </Link>
-                      <Link className="link" to="/add">
-                        Add New Gig
-                      </Link>
-                    </>
-                  )}
-                  <Link className="link" to="/orders">
-                    Orders
-                  </Link>
-                  <Link className="link" to="/messages">
-                    Messages
-                  </Link>
-                  <Link className="link" onClick={handleLogout}>
-                    Logout
-                  </Link>
-                </div>
-              )}
+    <div className="home">
+      <Feature />
+      <T_Companies />
+      {/* <Slide slidesToShow={5} arrowsScroll={5}>
+        {cards.map((card) => (
+          <CatCard key={card.id} card={card} />
+        ))}
+      </Slide> */}
+      <div className="features">
+        <div className="container">
+          <div className="item">
+            <h1>A whole world of freelance talent at your fingertips</h1>
+            <div className="title">
+              <img src="./img/check.png" alt="" />
+              The best for every budget
             </div>
-          ) : (
-            <>
-              <Link to="/login" className="link">Sign in</Link>
-              <Link className="link" to="/register">
-                <button>Join</button>
-              </Link>
-            </>
-          )}
+            <p>
+              Find high-quality services at every price point. No hourly rates,
+              just project-based pricing.
+            </p>
+            <div className="title">
+              <img src="./img/check.png" alt="" />
+              Quality work done quickly
+            </div>
+            <p>
+              Find the right freelancer to begin working on your project within
+              minutes.
+            </p>
+            <div className="title">
+              <img src="./img/check.png" alt="" />
+              Protected payments, every time
+            </div>
+            <p>
+              Always know what you'll pay upfront. Your payment isn't released
+              until you approve the work.
+            </p>
+            <div className="title">
+              <img src="./img/check.png" alt="" />
+              24/7 support
+            </div>
+            <p>
+              Find high-quality services at every price point. No hourly rates,
+              just project-based pricing.
+            </p>
+          </div>
+          <div className="item">
+            <video src="./img/video.mp4" controls />
+          </div>
         </div>
       </div>
-      {(active || pathname !== "/") && (
-        <>
-          <hr />
-          <div className="menu">
-            <Link className="link menuLink" to="/">
-              Graphics & Design
-            </Link>
-            <Link className="link menuLink" to="/">
-              Video & Animation
-            </Link>
-            <Link className="link menuLink" to="/">
-              Writing & Translation
-            </Link>
-            <Link className="link menuLink" to="/">
-              AI Services
-            </Link>
-            <Link className="link menuLink" to="/">
-              Digital Marketing
-            </Link>
-            <Link className="link menuLink" to="/">
-              Music & Audio
-            </Link>
-            <Link className="link menuLink" to="/">
-              Programming & Tech
-            </Link>
-            <Link className="link menuLink" to="/">
-              Business
-            </Link>
-            <Link className="link menuLink" to="/">
-              Lifestyle
-            </Link>
+      <div className="explore">
+        <div className="container">
+          <h1>Explore the marketplace</h1>
+          <div className="items">
+            <div className="item">
+              <img
+                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/graphics-design.d32a2f8.svg"
+                alt=""
+              />
+              <div className="line"></div>
+              <span>Graphics & Design</span>
+            </div>
+            <div className="item">
+              <img
+                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/online-marketing.74e221b.svg"
+                alt=""
+              />
+              <div className="line"></div>
+
+              <span>Digital Marketing</span>
+            </div>
+            <div className="item">
+              <img
+                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/writing-translation.32ebe2e.svg"
+                alt=""
+              />
+              <div className="line"></div>
+              <span>Writing & Translation</span>
+            </div>
+            <div className="item">
+              <img
+                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/video-animation.f0d9d71.svg"
+                alt=""
+              />
+              <div className="line"></div>
+              <span>Video & Animation</span>
+            </div>
+            <div className="item">
+              <img
+                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/music-audio.320af20.svg"
+                alt=""
+              />
+              <div className="line"></div>
+              <span>Music & Audio</span>
+            </div>
+            <div className="item">
+              <img
+                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/programming.9362366.svg"
+                alt=""
+              />
+              <div className="line"></div>
+              <span>Programming & Tech</span>
+            </div>
+            <div className="item">
+              <img
+                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/business.bbdf319.svg"
+                alt=""
+              />
+              <div className="line"></div>
+              <span>Business</span>
+            </div>
+            <div className="item">
+              <img
+                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/lifestyle.745b575.svg"
+                alt=""
+              />
+              <div className="line"></div>
+              <span>Lifestyle</span>
+            </div>
+            <div className="item">
+              <img
+                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/data.718910f.svg"
+                alt=""
+              />
+              <div className="line"></div>
+              <span>Data</span>
+            </div>
+            <div className="item">
+              <img
+                src="https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/photography.01cf943.svg"
+                alt=""
+              />
+              <div className="line"></div>
+              <span>Photography</span>
+            </div>
           </div>
-          <hr />
-        </>
-      )}
+        </div>
+      </div>
+      <div className="features dark">
+        <div className="container">
+          <div className="item">
+            <h1>
+              fiverr <i>business</i>
+            </h1>
+            <h1>
+              A business solution designed for <i>teams</i>
+            </h1>
+            <p>
+              Upgrade to a curated experience packed with tools and benefits,
+              dedicated to businesses
+            </p>
+            <div className="title">
+              <img src="./img/check.png" alt="" />
+              Connect to freelancers with proven business experience
+            </div>
+
+            <div className="title">
+              <img src="./img/check.png" alt="" />
+              Get matched with the perfect talent by a customer success manager
+            </div>
+
+            <div className="title">
+              <img src="./img/check.png" alt="" />
+              Manage teamwork and boost productivity with one powerful workspace
+            </div>
+            <button>Explore Fiverr Business</button>
+          </div>
+          <div className="item">
+            <img
+              src="https://fiverr-res.cloudinary.com/q_auto,f_auto,w_870,dpr_2.0/v1/attachments/generic_asset/asset/d9c17ceebda44764b591a8074a898e63-1599597624768/business-desktop-870-x2.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+      {/* <Slide slidesToShow={4} arrowsScroll={4}>
+        {projects.map((card) => (
+          <ProjectCard key={card.id} card={card} />
+        ))}
+      </Slide> */}
     </div>
   );
 }
 
-export default Navbar;
+export default Home;
