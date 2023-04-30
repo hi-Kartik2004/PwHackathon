@@ -1,8 +1,15 @@
+import  { useState } from "react";
 import "./Feature.scss";
+import { useNavigate } from "react-router-dom";
 
 function Featured() {
+  const [input, setInput] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = () => {
+    navigate(`/gigs?search=${input}`);
+  };
   return (
-    <center>
     <div className="featured">
       <div className="container">
         <div className="left">
@@ -12,9 +19,13 @@ function Featured() {
           <div className="search">
             <div className="searchInput">
               <img src="./img/search.png" alt="" />
-              <input type="text" placeholder='Try "building mobile app"' />
+              <input
+                type="text"
+                placeholder='Try "building mobil app"'
+                onChange={(e) => setInput(e.target.value)}
+              />
             </div>
-            <button>Search</button>
+            <button onClick={handleSubmit}>Search</button>
           </div>
           <div className="popular">
             <span>Popular:</span>
@@ -29,7 +40,6 @@ function Featured() {
         </div>
       </div>
     </div>
-    </center>
   );
 }
 

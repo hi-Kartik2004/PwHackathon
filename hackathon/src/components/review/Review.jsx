@@ -1,8 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
+// import React from "react";
 import newRequest from "../../utils/newRequest";
 import "./Review.scss";
-const Review = ({ review }) => {
+
+
+const Review = ({review}) => {
+  console.log("here")
   const { isLoading, error, data } = useQuery(
     {
       queryKey: [review.userId],
@@ -22,7 +25,7 @@ const Review = ({ review }) => {
         "error"
       ) : (
         <div className="user">
-          <img className="pp" src={data.img || "/img/noavatar.jpg"} alt="" />
+          <img className="pp" src={data.img || ""} alt="no image" />
           <div className="info">
             <span>{data.username}</span>
             <div className="country">
@@ -35,7 +38,8 @@ const Review = ({ review }) => {
         {Array(review.star)
           .fill()
           .map((item, i) => (
-            <img src="/img/star.png" alt="" key={i} />
+            // <img src="" alt="" key={i} />
+            <p key={i}>⭐</p>
           ))}
         <span>{review.star}</span>
       </div>

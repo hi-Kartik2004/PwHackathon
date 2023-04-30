@@ -1,3 +1,4 @@
+// import React from "react";
 import "./Footer.scss";
 
 function Footer() {
@@ -33,8 +34,8 @@ function Footer() {
             <h2>Support</h2>
             <span>Help & Support</span>
             <span>Trust & Safety</span>
-            <span>Selling on GigBridge</span>
-            <span>Buying on GigBridge</span>
+            <span>Selling on Fiverr</span>
+            <span>Buying on Fiverr</span>
           </div>
           <div className="item">
             <h2>Community</h2>
@@ -52,14 +53,14 @@ function Footer() {
           </div>
           <div className="item">
             <h2>More From Fiverr</h2>
-            <span>GigBridge Business</span>
-            <span>GigBridge Pro</span>
-            <span>GigBridge Logo Maker</span>
-            <span>GigBridge Guides</span>
+            <span>Fiverr Business</span>
+            <span>Fiverr Pro</span>
+            <span>Fiverr Logo Maker</span>
+            <span>Fiverr Guides</span>
             <span>Get Inspired</span>
-            <span>GigBridge Select</span>
+            <span>Fiverr Select</span>
             <span>ClearVoice</span>
-            <span>GigBridge Workspace</span>
+            <span>Fiverr Workspace</span>
             <span>Learn</span>
             <span>Working Not Working</span>
           </div>
@@ -67,8 +68,8 @@ function Footer() {
         <hr />
         <div className="bottom">
           <div className="left">
-            <h2>GigBridge</h2>
-            <span>©GigBridge International Ltd. 2023</span>
+            <h2>fiverr</h2>
+            <span>© Fiverr International Ltd. 2023</span>
           </div>
           <div className="right">
             <div className="social">

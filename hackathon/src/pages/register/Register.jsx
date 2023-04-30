@@ -38,7 +38,7 @@ function Register() {
         ...user,
         img: url,
       });
-      navigate("/")
+      navigate("/login")
     } catch (err) {
       console.log(err);
     }
@@ -52,7 +52,7 @@ function Register() {
           <input
             name="username"
             type="text"
-            placeholder="johndoe"
+            placeholder="Enter your Username"
             onChange={handleChange}
           />
           <label htmlFor="">Email</label>
