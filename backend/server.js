@@ -10,14 +10,14 @@ import reviewRoute from "./routes/review.route.js";
 import authRoute from "./routes/auth.route.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
-
+const URL = process.env.MONGO;
 const app = express();
 dotenv.config();
 mongoose.set("strictQuery", true);
 
 const connect = async () => {
   try {
-    await mongoose.connect("mongodb+srv://abhi:abhi@cluster0.jt8xpxy.mongodb.net");
+    await mongoose.connect(URL);
     console.log("Connected to mongoDB!");
   } catch (error) {
     console.log(error);
@@ -52,7 +52,7 @@ app.use((req,res,next) =>{
 
 })
 
-app.listen(8800, () => {
+app.listen(8800 || process.env.PORT, () => {
   connect();
   console.log("Backend server is running!");
 });
