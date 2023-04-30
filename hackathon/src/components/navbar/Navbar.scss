@@ -126,9 +126,9 @@
 
   @media screen and (max-width : 768px) {
       font-size: 12px;
-      .menu{
-        display: none;
-      }
+      .navbar .menu{
+      display: none;
+    }
 
       .logo{
         span{
@@ -149,9 +149,7 @@
 
   @media screen and (max-width : 525px) {
     font-size: 8px;
-    .menu{
-      display: none;
-    }
+    
 
     .logo{
       span{

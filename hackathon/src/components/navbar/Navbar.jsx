@@ -39,14 +39,13 @@ function Navbar() {
       <div className="container">
         <div className="logo">
           <Link className="link" to="/">
-            <span className="text">Gigbridge</span>
+            <span className="text">GigBridge</span>
           </Link>
           <span className="dot">.</span>
         </div>
         <div className="links">
           <span>GigBridge Business</span>
           <span>Explore</span>
-          <span>English</span>
           {!currentUser?.isSeller && <span>Become a Seller</span>}
           {currentUser ? (
             <div className="user" onClick={() => setOpen(!open)}>
